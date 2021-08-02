@@ -14,3 +14,9 @@ install:
 	go install \
 		google.golang.org/protobuf/cmd/protoc-gen-go@v1.26 \
 		google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.1
+
+server: 
+	go run cmd/server/main.go -port 8080
+
+client: 
+	go run cmd/client/main.go -address 0.0.0.0:8080

@@ -12,27 +12,25 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-
 func TestServiceCreateLaptop(t *testing.T) {
 	t.Parallel()
 
 	laptopNoID := sample.NewLaptop()
 	laptopNoID.Id = ""
 
-	laptopInvalidID:= sample.NewLaptop()
+	laptopInvalidID := sample.NewLaptop()
 	laptopInvalidID.Id = "invalid-uuid"
 
 	laptopDuplicateID := sample.NewLaptop()
 	storeDuplicateID := service.NewInMemoryLaptopStore()
-	err:= storeDuplicateID.Save(laptopDuplicateID)
-	require.Nil(t,err)
-
+	err := storeDuplicateID.Save(laptopDuplicateID)
+	require.Nil(t, err)
 
 	testCases := []struct {
-		name string
+		name   string
 		laptop *pb.Laptop
-		store service.LaptopStore
-		code codes.Code
+		store  service.LaptopStore
+		code   codes.Code
 	}{
 		{
 			name:   "success_with_id",
@@ -60,17 +58,17 @@ func TestServiceCreateLaptop(t *testing.T) {
 		},
 	}
 
-	for i:= range testCases{
-		tc:= testCases[i]
+	for i := range testCases {
+		tc := testCases[i]
 
-		t.Run(tc.name, func (t *testing.T){
+		t.Run(tc.name, func(t *testing.T) {
 			t.Parallel()
-			req:= &pb.CreateLaptopRequest{
+			req := &pb.CreateLaptopRequest{
 				Laptop: tc.laptop,
 			}
 			server := service.NewLaptopServer(tc.store)
 
-			res, err:= server.CreateLaptop(context.Background(), req)
+			res, err := server.CreateLaptop(context.Background(), req)
 
 			if tc.code == codes.OK {
 				require.NoError(t, err)
@@ -86,6 +84,6 @@ func TestServiceCreateLaptop(t *testing.T) {
 				require.True(t, ok)
 				require.Equal(t, tc.code, st.Code())
 			}
-		}) 
+		})
 	}
 }

@@ -1,27 +1,27 @@
 {
- "id": "7dd639a7-c4b1-4bd1-9120-18907b568dc5",
+ "id": "44a6a3cd-1734-460e-a667-992913db05e9",
  "brand": "Dell",
- "name": "XPS",
+ "name": "Alienware",
  "cpu": {
-  "brand": "Intel",
-  "name": "Core i7-9750H",
-  "numberCores": 6,
-  "numberThreads": 8,
-  "minGhz": 2.2339913108549663,
-  "maxGhz": 3.827125679819358
+  "brand": "AMD",
+  "name": "Ryzen 5 PRO 3500U",
+  "numberCores": 4,
+  "numberThreads": 11,
+  "minGhz": 2.9941483496114447,
+  "maxGhz": 4.376010070472159
  },
  "ram": {
-  "value": "60",
+  "value": "26",
   "unit": "GIGABYTE"
  },
  "gpus": [
   {
-   "brand": "NVDIA",
-   "name": "RTX 2070",
-   "minGhz": 1.158042358916595,
-   "maxGhz": 1.6407310841233287,
+   "brand": "AMD",
+   "name": "RX 590",
+   "minGhz": 1.257609747713102,
+   "maxGhz": 1.5839242698116545,
    "memory": {
-    "value": "2",
+    "value": "3",
     "unit": "GIGABYTE"
    }
   }
@@ -30,32 +30,33 @@
   {
    "driver": "SSD",
    "memory": {
-    "value": "677",
+    "value": "722",
     "unit": "GIGABYTE"
    }
   },
   {
    "driver": "HDD",
    "memory": {
-    "value": "4",
+    "value": "6",
     "unit": "TERABYTE"
    }
   }
  ],
  "screen": {
-  "sizeInch": 15.667498,
+  "sizeInch": 16.047201,
   "resolution": {
-   "width": 5960,
-   "height": 3353
+   "width": 4775,
+   "height": 2686
   },
-  "panel": "IPS"
+  "panel": "IPS",
+  "multitouch": true
  },
  "keyboard": {
-  "layout": "QWERTY",
+  "layout": "AZERTY",
   "backlit": true
  },
- "weightKg": 1.2448701076049544,
- "priceUsd": 1700.4009911798405,
+ "weightKg": 2.853540326041349,
+ "priceUsd": 2288.6699664048415,
  "releaseYear": 2015,
- "updatedAt": "2021-08-01T11:00:21.367439200Z"
+ "updatedAt": "2021-08-01T14:58:16.778771800Z"
 }

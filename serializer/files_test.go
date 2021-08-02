@@ -13,7 +13,7 @@ import (
 
 func TestFileSerializer(t *testing.T) {
 	t.Parallel()
-	
+
 	binaryFile := "../tmp/laptop.bin"
 	jsonFile := "../tmp/laptop.json"
 
@@ -21,7 +21,7 @@ func TestFileSerializer(t *testing.T) {
 
 	err := serializer.WriteProtobufToBinaryFile(laptop1, binaryFile)
 	require.NoError(t, err)
-	
+
 	err = serializer.WriteProtobufToJSONFile(laptop1, jsonFile)
 	require.NoError(t, err)
 
@@ -29,8 +29,8 @@ func TestFileSerializer(t *testing.T) {
 	err = serializer.ReadProtobufFromBinaryFile(binaryFile, laptop2)
 	require.NoError(t, err)
 	require.True(t, proto.Equal(laptop1, laptop2))
-	
-	err = serializer.ReadProtobufFromJsonFile( laptop2, jsonFile)
+
+	err = serializer.ReadProtobufFromJsonFile(laptop2, jsonFile)
 	fmt.Println("laptop3")
 	require.NoError(t, err)
 	require.True(t, proto.Equal(laptop1, laptop2))
