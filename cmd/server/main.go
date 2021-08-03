@@ -23,11 +23,11 @@ func main() {
 	pb.RegisterLaptopServiceServer(grpcServer, laptopServer)
 
 	address:= fmt.Sprintf("0.0.0.0:%d",*port)
-	listerner,err := net.Listen("tcp",address)
+	listener,err := net.Listen("tcp",address)
 
 	if err != nil {
 		log.Fatal("cannot start server: ",err)
 	}
-	log.Fatal(grpcServer.Serve(listerner))
+	log.Fatal(grpcServer.Serve(listener))
 
 }
