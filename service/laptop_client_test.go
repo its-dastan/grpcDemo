@@ -173,7 +173,6 @@ func TestClientUploadImage(t *testing.T) {
 	require.EqualValues(t, size, res.GetSize())
 
 	savedImagePath := fmt.Sprintf("%s/%s%s", testImageFolder, res.GetId(), imageType)
-	log.Printf(savedImagePath)
 	require.NoError(t, os.Remove(savedImagePath))
 }
 
