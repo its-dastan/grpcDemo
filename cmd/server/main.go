@@ -34,7 +34,13 @@ func createUser(userStore service.UserStore, username, password, role string) er
 	return userStore.Save(user)
 }
 
-func accessibleRoles() map[string]string {
+func accessibleRoles() map[string][]string {
+	const laptopServicePath = "/proto.LaptopService/"
+	return map[string][]string{
+		laptopServicePath + "CreateLaptop": {"admin"},
+		laptopServicePath + "UploadImage":  {"admin"},
+		laptopServicePath + "RateLaptop":   {"admin", "user"},
+	}
 }
 
 func main() {

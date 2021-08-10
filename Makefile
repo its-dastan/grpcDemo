@@ -23,3 +23,5 @@ client:
 
 evans:
 	evans -r -p 8080
+
+.PHONY: gen clean server client test
