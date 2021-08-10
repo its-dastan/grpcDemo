@@ -20,3 +20,6 @@ server:
 
 client: 
 	go run cmd/client/main.go -address 0.0.0.0:8080
+
+evans:
+	evans -r -p 8080
