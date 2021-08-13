@@ -2,7 +2,6 @@ package service
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/its-dastan/grpcDemo/pb"
 	"google.golang.org/grpc/codes"
@@ -30,7 +29,6 @@ func (server *AuthServer) Login(ctx context.Context, req *pb.LoginRequest) (*pb.
 	}
 
 	token, err := server.jwtManager.Generate(user)
-	fmt.Println(err)
 	if err != nil {
 		return nil, status.Errorf(codes.Internal, "cannot generate access token : %v", err)
 	}

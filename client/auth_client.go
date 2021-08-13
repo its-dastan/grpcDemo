@@ -22,8 +22,8 @@ func NewAuthClient(cc *grpc.ClientConn, username string, password string) *AuthC
 }
 
 func (client *AuthClient) Login() (string, error) {
-	ctx, cancle := context.WithTimeout(context.Background(), 5*time.Second)
-	defer cancle()
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
 
 	req := &pb.LoginRequest{
 		Username: client.username,

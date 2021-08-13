@@ -95,7 +95,7 @@ func main() {
 	if err != nil {
 		log.Fatal("cannot create auth interceptor: ", err)
 	}
-
+	log.Println(interceptor)
 	cc2, err := grpc.Dial(
 		*serverAddress,
 		grpc.WithInsecure(),

@@ -19,7 +19,7 @@ const (
 )
 
 func seedUser(userStore service.UserStore) error {
-	err := createUser(userStore, "admin1", "secret", "user")
+	err := createUser(userStore, "admin1", "secret", "admin")
 	if err != nil {
 		return err
 	}
